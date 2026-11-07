@@ -1,0 +1,14 @@
+[Unit]
+Description=Keyboard chatter filter
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStartPre=/usr/bin/modprobe uinput
+ExecStart=/usr/local/bin/keydebounce --device /dev/input/by-id/usb-EXAMPLE_KEYBOARD-event-kbd --threshold 30
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

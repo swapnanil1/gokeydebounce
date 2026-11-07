@@ -1,0 +1,7 @@
+/bin/
+/dist/
+/coverage.out
+/keydebounce
+/keydebounce-arm64
+*.test
+*.prof
